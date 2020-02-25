@@ -1,0 +1,67 @@
+{
+  // 有关 tasks.json 格式的文档，请参见
+    // https://go.microsoft.com/fwlink/?LinkId=733558
+    "version": "2.0.0",
+    "tasks": [
+      //f4
+      {
+        "type": "shell",
+        "command": "git pull gitlab master",
+        "label": "git pull",
+        "problemMatcher": []
+      },
+      //f6
+      {
+        "type": "npm",
+        "script": "gitpush",
+        "path": "./",
+        "group": "build",
+        "label": "git push",
+        "problemMatcher": []
+      },
+      //f8 start
+      {
+        "type": "npm",
+        "script": "start",
+        "path": "./",
+        "group": "build",
+        "label": "start",
+        "problemMatcher": []
+      },
+      //f9 build
+      {
+        "type": "npm",
+        "script": "build-components",
+        "path": "./",
+        "group": "build",
+        "label": "build",
+        "problemMatcher": []
+      },
+      //f10 publish
+      {
+        "type": "npm",
+        "script": "pub:all",
+        "path": "./",
+        "group": "build",
+        "label": "publish",
+        "problemMatcher": []
+      },
+      //f11 my install
+      {
+        "type": "shell",
+        "command": "rm -rf node_modules && cnpm i",
+        "label": "my install",
+        "problemMatcher": []
+      },
+      //f12 reset
+      {
+        "type": "shell",
+        "command": "rm -rf node_modules",
+        "label": "reset",
+        "problemMatcher": []
+      },
+  
+      
+    ]
+  }
+  
