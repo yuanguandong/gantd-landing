@@ -28,6 +28,8 @@ import timeImg from './images/time.png'
 import Code from './Code'
 
 
+
+
 const Page = (props: any) => {
 
   useEffect(() => {
@@ -44,6 +46,10 @@ const Page = (props: any) => {
   return (
     <div className="home-page" style={{ background: `url(${bannerbkgImg}) top center no-repeat` }}>
       <Header key="header" />
+
+
+     
+
 
 
 

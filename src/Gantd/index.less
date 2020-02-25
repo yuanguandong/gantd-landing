@@ -38,16 +38,17 @@ header {
     }
 
     .h1 {
-      
+
       display: inline;
       line-height: 50px;
       user-select: none;
-
+      .gant-omit-1;
       span {
         cursor: pointer;
 
         a {
           color: rgba(255, 255, 255, 0.8);
+
           &:hover {
             color: rgba(255, 255, 255, 1);
             font-weight: bold;
@@ -143,7 +144,8 @@ header {
     flex-flow: row wrap;
 
     .block-item {
-      padding:50px;
+      padding: 50px;
+
       @media screen and (max-width: 640px) {
         flex: 0 0 100%;
       }

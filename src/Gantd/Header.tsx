@@ -38,11 +38,11 @@ export default function Header(props: any) {
             </h1> */}
           </div>
           <div className='h1'>
-            <span className="gant-margin-h-10"><a href="#datacell">数据单元</a></span>
-            <span className="gant-margin-h-10"><a href="#form">表单</a></span>
-            <span className="gant-margin-h-10"><a href="#table">表格</a></span>
-            <span className="gant-margin-h-10"><a href="#datacell"><Icon type='book' theme='filled' /> 文档</a></span>
-            <span className="gant-margin-h-10"><a href="#datacell"><Icon type='github' /> GITHUB</a></span>
+            <span className="gant-margin-h-20"><a href="#datacell"><Icon type='edit' /> 数据单元</a></span>
+            <span className="gant-margin-h-20"><a href="#form"><Icon type='form' /> 表单</a></span>
+            <span className="gant-margin-h-20"><a href="#table"><Icon type='table' /> 表格</a></span>
+            <span className="gant-margin-h-20"><a href="#datacell"><Icon type='book' theme='filled' /> 文档</a></span>
+            <span className="gant-margin-h-20"><a href="#datacell"><Icon type='github' /> GITHUB</a></span>
           </div>
         </div>
 

@@ -9,9 +9,7 @@ const Demo = () => {
     console.log(id, value);
     cb()
   }
-  return <>
-    <Input allowEdit={true} onSave={onSave} value={value} onChange={setValue} />
-  </>
+  return <Input allowEdit={true} onSave={onSave} value={value} onChange={setValue} />
 }
   `,
 
