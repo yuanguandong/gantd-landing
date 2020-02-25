@@ -25,4 +25,5 @@ export default {
   "theme": {
     "primary-color": "#27278a",
   },
+  outputPath:'doc'
 }

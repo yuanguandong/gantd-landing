@@ -31,7 +31,7 @@
       //f9 build
       {
         "type": "npm",
-        "script": "build-components",
+        "script": "build",
         "path": "./",
         "group": "build",
         "label": "build",
