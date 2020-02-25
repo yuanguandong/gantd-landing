@@ -48,10 +48,10 @@ export default function Footer(props: any) {
                   链接
               </div>
                 <div className="link">
-                  <a href="http://mobile.ant.design">文档</a>
+                  <a href="">文档</a>
                 </div>
                 <div className="link">
-                  <a href="http://mobile.ant.design">GITHUB</a>
+                  <a href="">GITHUB</a>
                 </div>
               </Col>
             </QueueAnim>

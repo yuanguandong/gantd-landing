@@ -19,6 +19,8 @@ const Demo = () => {
 import React, { useState, useRef } from 'react'
 import { Button } from 'antd'
 import { SchemaForm, EditStatus } from 'gantd'
+//import SchemaForm from 'schema-form-g'
+//import EditStatus from 'data-cell-g'
 
 const schema = {
     type: "object",
