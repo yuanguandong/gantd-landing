@@ -6,7 +6,7 @@
       //f4
       {
         "type": "shell",
-        "command": "git pull gitlab master",
+        "command": "git pull gitee master",
         "label": "git pull",
         "problemMatcher": []
       },
