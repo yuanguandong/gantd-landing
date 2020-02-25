@@ -9,6 +9,7 @@ import Banner from './Banner'
 import Block from './Block'
 import Footer from './Footer'
 
+import bannerbkgImg from './images/bannerbkg.png'
 import bannerImg from './images/bannerimg.png'
 import formImg from './images/form.png'
 import childImg from './images/child.png'
@@ -41,7 +42,7 @@ const Page = (props: any) => {
 
 
   return (
-    <div className="home-page">
+    <div className="home-page" style={{ background: `url(${bannerbkgImg}) top center no-repeat` }}>
       <Header key="header" />
 
 
@@ -257,7 +258,7 @@ const Page = (props: any) => {
               其他
           </div>
             <div className="content">
-            除了表格和表单是我们主要研究的对象，我们还做了一些其他组件，比如布局容器的归纳收敛、和一些其他组件，希望能给你带来帮助。
+              除了表格和表单是我们主要研究的对象，我们还做了一些其他组件，比如布局容器的归纳收敛、和一些其他组件，希望能给你带来帮助。
 
           </div>
             <Button size="large" className="gant-margin-v-20">开始使用</Button>
