@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Button, Icon, notification, Tag } from 'antd'
+import { Button, Icon, notification, Row, Col } from 'antd'
 import classnames from 'classnames'
 import Prism from 'prismjs'
 Prism.highlightAll()
@@ -27,8 +27,17 @@ import timeImg from './images/time.png'
 
 import Code from './Code'
 
+import SchemaFormDemo from './SchemaFormDemo'
+import DataCellDemo from './DataCellDemo'
 
-
+const span = {
+  xs: 24,
+  sm: 24,
+  md: 24,
+  lg: 24,
+  xl: 24,
+  xxl: 24
+}
 
 const Page = (props: any) => {
 
@@ -48,7 +57,7 @@ const Page = (props: any) => {
       <Header key="header" />
 
 
-     
+
 
 
 
@@ -121,11 +130,20 @@ const Page = (props: any) => {
         }]}
         extra={
           <div className="full-width" style={{ maxWidth: 1000, marginTop: 50 }}>
-            <pre className="language-tsx">
-              <code >
-                {Code.dataCell}
-              </code>
-            </pre>
+            <Row>
+              <Col {...span}>
+                <div className="demo-box">
+                <DataCellDemo />
+                </div>
+              </Col>
+              <Col {...span}>
+                <pre className="language-tsx">
+                  <code >
+                    {Code.dataCell}
+                  </code>
+                </pre>
+              </Col>
+            </Row>
           </div>
         }
       />
@@ -187,11 +205,20 @@ const Page = (props: any) => {
         }]}
         extra={
           <div className="full-width" style={{ maxWidth: 1000, marginTop: 50 }}>
-            <pre className="language-tsx">
-              <code >
-                {Code.form}
-              </code>
-            </pre>
+            <Row>
+              <Col {...span}>
+              <div className="demo-box">
+                <SchemaFormDemo />
+                </div>
+              </Col>
+              <Col {...span}>
+                <pre className="language-tsx">
+                  <code >
+                    {Code.form}
+                  </code>
+                </pre>
+              </Col>
+            </Row>
           </div>
         }
       />

@@ -16,7 +16,7 @@ export default {
   },
   extraBabelPlugins: [[
     "prismjs", {
-      "languages": ["javascript", "css", "markup","tsx"],
+      "languages": ["javascript", "css", "markup","tsx","json","bash"],
       "plugins": ["line-numbers"],
       "theme": "okaidia",
       "css": true
