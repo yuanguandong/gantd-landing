@@ -8,6 +8,19 @@ import Home from '../Gantd';
 // import TweenOne from 'rc-tween-one';
 // import QueueAnim from 'rc-queue-anim';
 
+import favicon from '../Gantd/images/favicon.ico'
+const updateFavicon = (img) => {
+  var link = document.createElement('link');
+  link.type = 'image/x-icon';
+  link.rel = 'shortcut icon';
+  link.href = img;
+  document.getElementsByTagName('head')[0].appendChild(link);
+}
+const updateTitle = (title) => {
+  document.title = title
+}
+updateFavicon(favicon)
+updateTitle('GantD | 专注于数据密集型业务场景React组件库')
 export default function () {
   return (
     <Home />
