@@ -24,6 +24,7 @@ import tableImg from './images/table.png'
 import table1Img from './images/table1.png'
 import table3Img from './images/table3.png'
 import timeImg from './images/time.png'
+import viewImg from './images/view.png'
 
 import Code from './Code'
 
@@ -251,12 +252,16 @@ const Page = (props: any) => {
       <Block
         title="Smart Table"
         style={{ background: 'rgba(128,128,128,0.03)' }}
-        span={2}
+        span={3}
         data={[{
           img: rwImg,
           title: '单元格编辑',
           content: '基于数据单元实现表单的读写分离单元格编辑'
         }, {
+          img: viewImg,
+          title: '多视图',
+          content: '快速配置、切换多种不同视图展现'
+        },{
           img: tableImg,
           title: '虚拟滚动',
           content: '大批量数据展现时性能优化'
