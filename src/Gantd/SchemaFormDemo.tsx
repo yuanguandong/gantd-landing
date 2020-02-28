@@ -46,6 +46,18 @@ const uiSchema = {
 export default function BasicUse() {
     const [edit, setEdit] = useState(EditStatus.CANCEL)
     const formRef = useRef(null)
+    const [data, setData] = useState({
+        key_1: '数据文本',
+        key_2: {
+            key: 'CNY',
+            value: '12'
+        },
+        key_3: 'https://www.npmjs.com/',
+        key_4: {
+            key: '86',
+            value: '13945689732'
+        }
+    })
 
     const onSubmit = async () => {
         if (!formRef.current) return
@@ -68,18 +80,6 @@ export default function BasicUse() {
         setEdit(SwitchStatus)
     }, [])
 
-    useEffect(() => {
-        formRef['current'].setFieldsValue({
-            key_1: '数据文本',
-            key_2: 168.2,
-            key_3: 'https://www.npmjs.com/',
-            key_4: {
-                code: '86',
-                value: '13945689732'
-            }
-        })
-    })
-
     const titleConfig = {
         "title:extra": (<>
             {edit === EditStatus.EDIT && <Button onClick={useSwitch} className='gant-margin-5' size="small">退出编辑</Button>}
@@ -90,15 +90,24 @@ export default function BasicUse() {
                     onSubmit()
                 }}
                 className='gant-margin-5' size="small"
+                type="primary"
             >
                 保存
             </Button>}
         </>)
     }
+    
+    const onSave = useCallback((id, value, cb) => {
+        setData({ ...data, [id]: value })
+        cb()
+    }, [data])
+
     return <>
         <SchemaForm
             wrappedComponentRef={formRef}
+            onSave={onSave}
             edit={edit}
+            data={data}
             schema={schema}
             uiSchema={uiSchema}
             titleConfig={titleConfig}

@@ -30,6 +30,7 @@ import Code from './Code'
 
 import SchemaFormDemo from './SchemaFormDemo'
 import DataCellDemo from './DataCellDemo'
+import SmartTableDemo from './SmartTableDemo'
 
 const span = {
   xs: 24,
@@ -134,7 +135,7 @@ const Page = (props: any) => {
             <Row>
               <Col {...span}>
                 <div className="demo-box">
-                <DataCellDemo />
+                  <DataCellDemo />
                 </div>
               </Col>
               <Col {...span}>
@@ -208,8 +209,8 @@ const Page = (props: any) => {
           <div className="full-width" style={{ maxWidth: 1000, marginTop: 50 }}>
             <Row>
               <Col {...span}>
-              <div className="demo-box">
-                <SchemaFormDemo />
+                <div className="demo-box">
+                  <SchemaFormDemo />
                 </div>
               </Col>
               <Col {...span}>
@@ -261,18 +262,27 @@ const Page = (props: any) => {
           img: viewImg,
           title: '多视图',
           content: '快速配置、切换多种不同视图展现'
-        },{
+        }, {
           img: tableImg,
           title: '虚拟滚动',
           content: '大批量数据展现时性能优化'
         }]}
         extra={
           <div className="full-width" style={{ maxWidth: 1000, marginTop: 50 }}>
-            <pre className="language-tsx">
-              <code >
-                {Code.table}
-              </code>
-            </pre>
+            <Row>
+              <Col {...span}>
+                <div className="demo-box">
+                  <SmartTableDemo />
+                </div>
+              </Col>
+              <Col {...span}>
+                <pre className="language-tsx">
+                  <code >
+                    {Code.table}
+                  </code>
+                </pre>
+              </Col>
+            </Row>
           </div>
         }
       />
