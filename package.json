@@ -14,7 +14,6 @@
     "antd": "^3.10.3",
     "babel-plugin-prismjs": "^2.0.1",
     "bisheng": "^1.4.6",
-    "data-cell-g": "^0.0.12",
     "enquire-js": "^0.2.1",
     "lodash": "^4.17.15",
     "prismjs": "^1.19.0",
@@ -27,9 +26,7 @@
     "react": "^16.6.0",
     "react-document-title": "^2.0.3",
     "react-dom": "^16.6.0",
-    "react-sublime-video": "^0.2.5",
-    "schema-form-g": "^0.0.32",
-    "smart-table-g": "^0.0.12"
+    "react-sublime-video": "^0.2.5"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",

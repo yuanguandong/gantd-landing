@@ -1,7 +1,8 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react'
 import { Button, notification, message } from 'antd'
-import SmartTable from 'smart-table-g'
-import { EditStatus, SwitchStatus } from 'data-cell-g'
+// import SmartTable from 'smart-table-g'
+// import { EditStatus, SwitchStatus } from 'data-cell-g'
+import {SmartTable,EditStatus,SwitchStatus} from 'gantd'
 import Code from './Code'
 import Prism from 'prismjs'
 
@@ -57,92 +58,91 @@ const tableColumns = [
     componentType: 'DataPicker'
   }
 ]
+const tableSchema = {
+  supportColumnFields: tableColumns,
+  systemViews: [
+    {
+      viewId: 'systemView',
+      name: "系统视图",
+      version: '2020-02-20 02:20:02',
+      panelConfig: {
+        wrap: false,
+        columnFields: [
+          {
+            fieldName: 'name',
+            width: 80
+          },
+          {
+            fieldName: 'age',
+            width: 70
+          },
+          {
+            fieldName: 'cellPhone',
+            width: 230
+          },
+          {
+            fieldName: 'domain',
+            width: 200
+          },
+          {
+            fieldName: 'email',
+            width: 170
+          },
+          {
+            fieldName: 'bio',
+            width: 375
+          },
+          {
+            fieldName: 'price',
+            width: 150
+          },
+          {
+            fieldName: 'address',
+            width: 195
+          },
+          {
+            fieldName: 'birth',
+            width: 160
+          }
+        ]
+      }
+    },{
+      viewId: 'systemView1',
+      name: "简洁视图",
+      version: '2020-02-20 02:20:02',
+      panelConfig: {
+        wrap: true,
+        isZebra:false,
+        bordered:false,
+        footerDirection:'row-reverse',
+        columnFields: [
+          {
+            fieldName: 'name',
+            width: 80
+          },
+          {
+            fieldName: 'age',
+            width: 70
+          },
+          {
+            fieldName: 'cellPhone',
+            width: 230
+          },
+          {
+            fieldName: 'domain',
+            width: 200
+          },
+          {
+            fieldName: 'email',
+            width: 170
+          }
+        ]
+      }
+    }
+  ]
+}
 export default function EditInlineUse() {
   
-
-  const tableSchema = {
-    supportColumnFields: tableColumns,
-    systemViews: [
-      {
-        viewId: 'systemView',
-        name: "系统视图",
-        version: '2020-02-20 02:20:02',
-        panelConfig: {
-          wrap: false,
-          columnFields: [
-            {
-              fieldName: 'name',
-              width: 80
-            },
-            {
-              fieldName: 'age',
-              width: 70
-            },
-            {
-              fieldName: 'cellPhone',
-              width: 230
-            },
-            {
-              fieldName: 'domain',
-              width: 200
-            },
-            {
-              fieldName: 'email',
-              width: 170
-            },
-            {
-              fieldName: 'bio',
-              width: 375
-            },
-            {
-              fieldName: 'price',
-              width: 150
-            },
-            {
-              fieldName: 'address',
-              width: 195
-            },
-            {
-              fieldName: 'birth',
-              width: 160
-            }
-          ]
-        }
-      },{
-        viewId: 'systemView',
-        name: "简洁视图",
-        version: '2020-02-20 02:20:02',
-        panelConfig: {
-          wrap: true,
-          isZebra:false,
-          bordered:false,
-          footerDirection:'row-reverse',
-          columnFields: [
-            {
-              fieldName: 'name',
-              width: 80
-            },
-            {
-              fieldName: 'age',
-              width: 70
-            },
-            {
-              fieldName: 'cellPhone',
-              width: 230
-            },
-            {
-              fieldName: 'domain',
-              width: 200
-            },
-            {
-              fieldName: 'email',
-              width: 170
-            }
-          ]
-        }
-      }
-    ]
-  }
 
   const data = [
     {

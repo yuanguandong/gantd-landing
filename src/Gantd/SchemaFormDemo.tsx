@@ -1,7 +1,6 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react'
 import { Button, notification } from 'antd'
-import SchemaForm from 'schema-form-g'
-import { EditStatus, SwitchStatus } from 'data-cell-g'
+import { EditStatus, SwitchStatus, SchemaForm } from 'gantd'
 import Code from './Code'
 import Prism from 'prismjs'
 
@@ -96,7 +95,7 @@ export default function BasicUse() {
             </Button>}
         </>)
     }
-    
+
     const onSave = useCallback((id, value, cb) => {
         setData({ ...data, [id]: value })
         cb()
