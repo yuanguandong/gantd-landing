@@ -22,12 +22,12 @@ const schema = {
         key_3: {
             title: "超链接",
             type: "string",
-            componentType: "Url"
+            componentType: "InputUrl"
         },
         key_4: {
             title: "手机号",
             type: "string",
-            componentType: "CellPhone"
+            componentType: "InputCellPhone"
         },
     }
 }

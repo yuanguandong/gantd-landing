@@ -13,7 +13,7 @@ const Demo = () => {
 }
   `,
 
-  form:`
+  form: `
 import React, { useState, useRef, useCallback, useEffect } from 'react'
 import { Button } from 'antd'
 import { EditStatus, SwitchStatus, SchemaForm } from 'gantd'
@@ -61,16 +61,25 @@ export default function BasicUse() {
     const [edit, setEdit] = useState(EditStatus.CANCEL)
     const formRef = useRef(null)
     const [data, setData] = useState({
-        key_1: '数据文本',
-        key_2: {
-            key: 'CNY',
-            value: '12'
-        },
-        key_3: 'https://www.npmjs.com/',
-        key_4: {
-            key: '86',
-            value: '13945689732'
-        }
+      key_1: {
+        title: "文本",
+        type: "string",
+      },
+      key_2: {
+          title: "金额",
+          type: "string",
+          componentType: "InputMoney"
+      },
+      key_3: {
+          title: "超链接",
+          type: "string",
+          componentType: "InputUrl"
+      },
+      key_4: {
+          title: "手机号",
+          type: "string",
+          componentType: "InputCellPhone"
+      }
     })
 
     const onSubmit = async () => {
@@ -118,7 +127,7 @@ export default function BasicUse() {
     </>
 }
   `,
-  table:`
+  table: `
   import React, { useState, useRef, useCallback, useEffect } from 'react'
   import { Button,  message } from 'antd'
   import {SmartTable,EditStatus,SwitchStatus} from 'gantd'

@@ -92,15 +92,16 @@ const Page = (props: any) => {
 
 
 
+      <div className={classnames('title')} id="datacell" style={{ background: 'rgba(128,128,128,0.03)', textAlign: 'center', paddingTop: 40 }}>数据单元 Data cell</div>
 
-
-      <Banner id="datacell" key="datacell"
+      <Banner key="datacell"
         img={dataCellImg}
         imageAlign='left'
+        style={{ background: 'rgba(128,128,128,0.03)' }}
         content={<>
-          <div className="title" style={{ fontSize: 24 }}>
+          {/* <div className="title" style={{ fontSize: 24 }}>
             数据单元
-          </div>
+          </div> */}
           <div className="content">
             <div>对于对象的信息，我们并不是一上来就要去更改，更多的时候应该是先去读这个对象。</div>
             <div>我们需要一种机制让读写分离开,而不是让用户一来就看到很多编辑框。</div>
@@ -115,7 +116,7 @@ const Page = (props: any) => {
 
 
       <Block
-        title="Data Cell"
+        // title="Data Cell"
         style={{ background: 'rgba(128,128,128,0.03)' }}
         data={[{
           img: rwImg,
@@ -159,14 +160,15 @@ const Page = (props: any) => {
 
 
 
+      <div className={classnames('title')} id="form" style={{ textAlign: 'center', paddingTop: 40 }}>数据驱动表单 Schema Form</div>
 
-      <Banner id="form" key="form"
+      <Banner key="form"
         img={formImg}
         imageAlign='right'
         content={<>
-          <div className="title" style={{ fontSize: 24 }}>
+          {/* <div className="title" style={{ fontSize: 24 }}>
             表单
-          </div>
+          </div> */}
           <div className="content">
             表单是业务开发中最常见的业务场景，表单的复杂程度往往需要我们使用大量的代码与时间去构建一个表单业务。我们如果用一种结构化的数据去描述我们的表单业务，以数据驱动的方式生成我们的业务表单，就能达到提效的作用。
 
@@ -178,8 +180,8 @@ const Page = (props: any) => {
 
 
       <Block
-        title="Schema Form"
-        style={{ background: 'rgba(128,128,128,0.03)' }}
+        // title="Schema Form"
+        // style={{ background: 'rgba(128,128,128,0.03)' }}
         data={[{
           img: timeImg,
           title: '快速构建',
@@ -233,14 +235,16 @@ const Page = (props: any) => {
 
 
 
+      <div className={classnames('title')} id="table" style={{ background: 'rgba(128,128,128,0.03)', textAlign: 'center', paddingTop: 40 }}>智能表格 SmartTable</div>
 
-      <Banner id="table" key="table"
+      <Banner key="table"
         img={table3Img}
+        style={{ background: 'rgba(128,128,128,0.03)' }}
         imageAlign='left'
         content={<>
-          <div className="title" style={{ fontSize: 24 }}>
+          {/* <div className="title" style={{ fontSize: 24 }}>
             表格
-          </div>
+          </div> */}
           <div className="content">
             对于数据密集型管理系统，尽可能少的空间展示尽可能多的内容和操作一直是很多用户的诉求，对于表格，我们往这个方向做了些优化，特性有多视图自定义，单元格编辑强化，虚拟滚动等
           </div>
@@ -251,7 +255,7 @@ const Page = (props: any) => {
 
 
       <Block
-        title="Smart Table"
+        // title="Smart Table"
         style={{ background: 'rgba(128,128,128,0.03)' }}
         span={3}
         data={[{
@@ -302,7 +306,7 @@ const Page = (props: any) => {
           img={moreImg}
           imageAlign='right'
           content={<>
-            <div className="title" style={{ fontSize: 24 }}>
+            <div className="title" style={{ fontSize: 24, color: '#fff' }}>
               其他
           </div>
             <div className="content">

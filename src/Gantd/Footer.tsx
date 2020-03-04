@@ -5,7 +5,7 @@ import QueueAnim from 'rc-queue-anim';
 import ScrollAnim from 'rc-scroll-anim';
 import TweenOne from 'rc-tween-one';
 const ScrollOverPack = ScrollAnim.OverPack;
-
+import GantImg from './images/gant.png'
 
 
 export default function Footer(props: any) {
@@ -60,8 +60,13 @@ export default function Footer(props: any) {
 
         </div >
         <div style={{ borderTop: '1px solid rgba(128,128,128,0.3)', marginTop: 30, padding: 20, textAlign: 'center' }}>
-          Made With ✊🏼 By 😜 GantFDT
+          Made With ✊🏼 By 😜 Gant FDT
           </div>
+        <div style={{ borderTop: '1px solid rgba(128,128,128,0.3)', padding: 20, textAlign: 'center' }}>
+          Sponsor <a href="https://www.gantsoftware.com/" target="_blank" style={{ display: 'inline-block',color:'#fff' }}><img src={GantImg} style={{ width: 40, display: 'inline-block' }} />
+            <p style={{ fontWeight: 'bold', display: 'inline-block' }}>GantSoftware</p>
+          </a>
+        </div>
       </footer>
     </>
   );

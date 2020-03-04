@@ -21,8 +21,23 @@ const updateTitle = (title) => {
 }
 updateFavicon(favicon)
 updateTitle('GantD | 专注于数据密集型业务场景React组件库')
+
+
+import { Header, Intro,AutoReload,TaskBoard,Input,Icon } from 'gantd'
+import { Button } from 'antd'
+
 export default function () {
   return (
+    // <>
+    //   <Header title='111' type="num" num={1} extra={<Button>1</Button>} />
+    //   <Intro title="1" />
+    //   <AutoReload/>
+    //   <TaskBoard/>
+    //   <Input/>
+    //   <Icon value="left"/>
+    //   {/* <Submenu /> */}
+    //   {/* <Card title="fdsafd">11</Card> */}
+    // </>
     <Home />
     // <div style={{height:5000}}>
     //   <OverPack style={{ overflow: 'hidden', height: 200 }} >
@@ -43,5 +58,5 @@ export default function () {
     //     </QueueAnim>
     //   </OverPack>
     // </div>
-  );
+  )
 }
