@@ -16,7 +16,7 @@ export default function Footer(props: any) {
     <>
       <footer className="footer" {...props}
       >
-        <div className="full-width" style={{ padding: 50 }}>
+        <div className="full-width" style={{ padding: '50px 50px 0 50px' }}>
           <Row>
             {/* <ScrollOverPack key="3132342"> */}
             <QueueAnim
@@ -59,10 +59,10 @@ export default function Footer(props: any) {
           </Row>
 
         </div >
-        <div style={{ borderTop: '1px solid rgba(128,128,128,0.3)', marginTop: 30, padding: 20, textAlign: 'center' }}>
+        <div style={{ borderTop: '1px solid rgba(128,128,128,0.3)', marginTop: 30, padding: 10, textAlign: 'center' }}>
           Made With ✊🏼 By 😜 Gant FDT
           </div>
-        <div style={{ borderTop: '1px solid rgba(128,128,128,0.3)', padding: 20, textAlign: 'center' }}>
+        <div style={{ borderTop: '1px solid rgba(128,128,128,0.3)', padding: 10, textAlign: 'center' }}>
           Sponsor <a href="https://www.gantsoftware.com/" target="_blank" style={{ display: 'inline-block',color:'#fff' }}><img src={GantImg} style={{ width: 40, display: 'inline-block' }} />
             <p style={{ fontWeight: 'bold', display: 'inline-block' }}>GantSoftware</p>
           </a>
