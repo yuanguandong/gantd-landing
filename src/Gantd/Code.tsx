@@ -61,24 +61,15 @@ export default function BasicUse() {
     const [edit, setEdit] = useState(EditStatus.CANCEL)
     const formRef = useRef(null)
     const [data, setData] = useState({
-      key_1: {
-        title: "文本",
-        type: "string",
-      },
+      key_1: '数据文本',
       key_2: {
-          title: "金额",
-          type: "string",
-          componentType: "InputMoney"
+          key: 'CNY',
+          value: '12'
       },
-      key_3: {
-          title: "超链接",
-          type: "string",
-          componentType: "InputUrl"
-      },
+      key_3: 'https://www.npmjs.com/',
       key_4: {
-          title: "手机号",
-          type: "string",
-          componentType: "InputCellPhone"
+          key: '86',
+          value: '13945689732'
       }
     })
 

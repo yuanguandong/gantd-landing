@@ -55,7 +55,7 @@ const Page = (props: any) => {
 
 
   return (
-    <div className="home-page" style={{ background: `url(${bannerbkgImg}) top center no-repeat` }}>
+    <div className="home-page" style={{ backgroundImage: `url(${bannerbkgImg})`,backgroundSize:'100%',backgroundRepeat:'no-repeat' }}>
       <Header key="header" />
 
 
@@ -314,7 +314,7 @@ const Page = (props: any) => {
 
           </div>
             <Button size="large" className="gant-margin-v-20">开始使用</Button>
-            <a>
+            <a style={{color:'#fff'}}>
               <div className="github">
 
                 <Icon type="github" /> github
