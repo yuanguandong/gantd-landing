@@ -3,7 +3,7 @@ import { Button, notification } from 'antd'
 import { EditStatus, SwitchStatus, SchemaForm } from 'gantd'
 import Code from './Code'
 import Prism from 'prismjs'
-
+import {format} from './utils'
 
 const schema = {
     type: "object",
@@ -67,7 +67,7 @@ export default function BasicUse() {
             description: <pre className="language-json">
                 <code>
                     <div dangerouslySetInnerHTML={{
-                        __html: Prism.highlight(JSON.stringify(formValues), Prism.languages.json, 'json')
+                        __html: Prism.highlight(format(JSON.stringify(formValues)), Prism.languages.json, 'json')
                     }} ></div>
                 </code >
             </pre >,

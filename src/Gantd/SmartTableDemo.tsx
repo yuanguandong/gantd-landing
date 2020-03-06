@@ -5,6 +5,7 @@ import { Button, notification, message } from 'antd'
 import {SmartTable,EditStatus,SwitchStatus} from 'gantd'
 import Code from './Code'
 import Prism from 'prismjs'
+import {format} from './utils'
 
 const tableColumns = [
   {
@@ -204,6 +205,17 @@ export default function EditInlineUse() {
     (newStateData) => {
       const diff = getDifference(newStateData, stateData)
       setStateData(newStateData)
+      notification.open({
+        message: '差异数据',
+        description: <pre className="language-json">
+          <code>
+            <div dangerouslySetInnerHTML={{
+              __html: Prism.highlight(format(JSON.stringify({ diff: diff })), Prism.languages.json, 'json')
+            }} ></div>
+          </code >
+        </pre >,
+        duration: 0,
+      })
       console.log('差异数据：', diff)
     },
     [stateData],

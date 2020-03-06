@@ -45,13 +45,16 @@ export default function Footer(props: any) {
               </Col>
               <Col key="c" {...span}>
                 <div className="title">
-                  链接
+                  相关链接
               </div>
                 <div className="link">
-                  <a href="">文档</a>
+                  <a href="http://docs.gant.design" target="_blank">文档</a>
                 </div>
                 <div className="link">
-                  <a href="">GITHUB</a>
+                  <a href="https://github.com/gantFDT/gant-design" target="_blank">GITHUB</a>
+                </div>
+                <div className="link">
+                  <a href="https://ant.design" target="_blank">AntD</a>
                 </div>
               </Col>
             </QueueAnim>
@@ -60,7 +63,7 @@ export default function Footer(props: any) {
 
         </div >
         <div style={{ borderTop: '1px solid rgba(128,128,128,0.3)', marginTop: 30, padding: 10, textAlign: 'center' }}>
-          Made By 😜 Gant FDT  |  Sponsor by<a href="https://www.gantsoftware.com/" target="_blank" style={{ display: 'inline-block', color: '#fff' }}><img src={GantImg} style={{ width: 40, display: 'inline-block' }} />
+          Made By <a href="https://github.com/gantFDT" target="_blank" style={{ display: 'inline-block', color: '#fff' }}>😜 Gant FDT</a> |  Sponsor by<a href="https://www.gantsoftware.com/" target="_blank" style={{ display: 'inline-block', color: '#fff' }}><img src={GantImg} style={{ width: 40, display: 'inline-block' }} />
             <p style={{ fontWeight: 'bold', display: 'inline-block' }}>GantSoftware</p>
           </a>
           </div>
