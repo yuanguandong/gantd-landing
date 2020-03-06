@@ -1,5 +1,6 @@
 
 export default {
+  hash: true,
   exportStatic: {
     htmlSuffix: true,
     dynamicRoot: true,
