@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Button, Icon, notification, Row, Col } from 'antd'
+import { Button, Icon, notification, Row, Col, Tag } from 'antd'
 import classnames from 'classnames'
 import Prism from 'prismjs'
 Prism.highlightAll()
@@ -58,7 +58,7 @@ const Page = (props: any) => {
 
 
   return (
-    <div className="home-page" style={{ backgroundImage: `url(${bannerbkgImg})`,backgroundSize:'100%',backgroundRepeat:'no-repeat' }}>
+    <div className="home-page" style={{ backgroundImage: `url(${bannerbkgImg})`, backgroundSize: '100%', backgroundRepeat: 'no-repeat' }}>
       <Header key="header" />
 
 
@@ -80,7 +80,8 @@ const Page = (props: any) => {
             <div>在Antd的基础上做了不同程度的针对性的强化，亦可以视作为Antd的补充，可以和Antd同时使用</div>
           </div>
           <Button size="large" type="primary" className="gant-margin-v-20" href="http://docs.gant.design" target="_blank">开始使用</Button>
-          <Button size="large" className={classnames('gant-margin-v-20','gant-margin-h-20')} href="https://github.com/gantFDT/gant-design" target="_blank"><Icon type="github" /> github</Button>
+          <Button size="large" className={classnames('gant-margin-v-20', 'gant-margin-h-20')} href="https://github.com/gantFDT/gant-design" target="_blank"><Icon type="github" /> github</Button>
+          <div style={{color:'rgba(128,128,128,0.6)'}}>base on antd@3.x</div>
         </>}
       />
 
@@ -94,16 +95,15 @@ const Page = (props: any) => {
 
 
 
-      <div className={classnames('title')} id="datacell" style={{ background: 'rgba(128,128,128,0.03)', textAlign: 'center', paddingTop: 40 }}>数据单元 Data cell</div>
+
 
       <Banner key="datacell"
         img={dataCellImg}
         imageAlign='left'
+        id="datacell"
         style={{ background: 'rgba(128,128,128,0.03)' }}
         content={<>
-          {/* <div className="title" style={{ fontSize: 24 }}>
-            数据单元
-          </div> */}
+          <div className={classnames('title')} style={{ fontSize: 36 }}>数据单元 Data cell</div>
           <div className="content">
             <div>对于对象的信息，我们并不是一上来就要去更改，更多的时候应该是先去读这个对象。</div>
             <div>我们需要一种机制让读写分离开,而不是让用户一来就看到很多编辑框。</div>
@@ -112,7 +112,7 @@ const Page = (props: any) => {
 
           </div>
           <Button size="large" type="primary" className="gant-margin-v-20" href="http://docs.gant.design/?path=/story/%E7%BB%84%E4%BB%B6-%E6%95%B0%E6%8D%AE%E5%8D%95%E5%85%83--rw-%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB" target="_blank">查看示例</Button>
-          <Button size="large" className={classnames('gant-margin-v-20','gant-margin-h-20')} href="https://github.com/gantFDT/gant-design" target="_blank"><Icon type="github" /> github</Button>
+          <Button size="large" className={classnames('gant-margin-v-20', 'gant-margin-h-20')} href="https://github.com/gantFDT/gant-design" target="_blank"><Icon type="github" /> github</Button>
         </>}
       />
 
@@ -162,21 +162,20 @@ const Page = (props: any) => {
 
 
 
-      <div className={classnames('title')} id="form" style={{ textAlign: 'center', paddingTop: 40 }}>数据驱动表单 Schema Form</div>
+
 
       <Banner key="form"
         img={formImg}
         imageAlign='right'
+        id="form"
         content={<>
-          {/* <div className="title" style={{ fontSize: 24 }}>
-            表单
-          </div> */}
+          <div className={classnames('title')} style={{ fontSize: 36 }}>数据驱动表单 Schema Form</div>
           <div className="content">
             表单是业务开发中最常见的业务场景，表单的复杂程度往往需要我们使用大量的代码与时间去构建一个表单业务。我们如果用一种结构化的数据去描述我们的表单业务，以数据驱动的方式生成我们的业务表单，就能达到提效的作用。
 
           </div>
           <Button size="large" type="primary" className="gant-margin-v-20" href="http://docs.gant.design/?path=/story/%E7%BB%84%E4%BB%B6-%E8%A1%A8%E5%8D%95--schemaform-%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8%E8%A1%A8%E5%8D%95-%F0%9F%93%A6" target="_blank">查看示例</Button>
-          <Button size="large" className={classnames('gant-margin-v-20','gant-margin-h-20')} href="https://github.com/gantFDT/gant-design" target="_blank"><Icon type="github" /> github</Button>
+          <Button size="large" className={classnames('gant-margin-v-20', 'gant-margin-h-20')} href="https://github.com/gantFDT/gant-design" target="_blank"><Icon type="github" /> github</Button>
         </>}
       />
 
@@ -237,21 +236,20 @@ const Page = (props: any) => {
 
 
 
-      <div className={classnames('title')} id="table" style={{ background: 'rgba(128,128,128,0.03)', textAlign: 'center', paddingTop: 40 }}>智能表格 SmartTable</div>
+
 
       <Banner key="table"
         img={table3Img}
         style={{ background: 'rgba(128,128,128,0.03)' }}
         imageAlign='left'
+        id="table"
         content={<>
-          {/* <div className="title" style={{ fontSize: 24 }}>
-            表格
-          </div> */}
+          <div className={classnames('title')} style={{ fontSize: 36 }}>智能表格 SmartTable</div>
           <div className="content">
             对于数据密集型管理系统，尽可能少的空间展示尽可能多的内容和操作一直是很多用户的诉求，对于表格，我们往这个方向做了些优化，特性有多视图自定义，单元格编辑强化，虚拟滚动等
           </div>
           <Button size="large" type="primary" className="gant-margin-v-20" href="http://docs.gant.design/?path=/story/%E7%BB%84%E4%BB%B6-%E5%88%97%E8%A1%A8--smarttable-%E6%99%BA%E8%83%BD%E8%A1%A8%E6%A0%BC-%F0%9F%93%A6" target="_blank">查看示例</Button>
-          <Button size="large" className={classnames('gant-margin-v-20','gant-margin-h-20')} href="https://github.com/gantFDT/gant-design" target="_blank"><Icon type="github" /> github</Button>
+          <Button size="large" className={classnames('gant-margin-v-20', 'gant-margin-h-20')} href="https://github.com/gantFDT/gant-design" target="_blank"><Icon type="github" /> github</Button>
         </>}
       />
 
@@ -308,15 +306,15 @@ const Page = (props: any) => {
           img={moreImg}
           imageAlign='right'
           content={<>
-            <div className="title" style={{ fontSize: 24, color: '#fff' }}>
+            <div className="title" style={{ fontSize: 36, color: '#fff' }}>
               其他
           </div>
             <div className="content">
-              除了表格和表单是我们主要研究的对象，我们还做了一些其他组件，比如布局容器的归纳收敛、和一些其他组件，希望能给你带来帮助。
+              除了表格和表单是我们主要研究的对象，我们还做了一些其他组件，比如布局容器的归纳收敛、和一些拓展组件，希望能给你带来帮助。
 
           </div>
             <Button size="large" className="gant-margin-v-20" href="http://docs.gant.design/?path=/story/%E7%BB%84%E4%BB%B6-%E5%AE%B9%E5%99%A8--submenu-%E5%AD%90%E8%8F%9C%E5%8D%95-%F0%9F%93%A6" target="_blank">查看更多</Button>
-            <Button size="large" className={classnames('gant-margin-v-20','gant-margin-h-20')} href="https://github.com/gantFDT/gant-design" target="_blank"><Icon type="github" /> github</Button>
+            <Button size="large" className={classnames('gant-margin-v-20', 'gant-margin-h-20')} href="https://github.com/gantFDT/gant-design" target="_blank"><Icon type="github" /> github</Button>
           </>}
         />
       </div>
