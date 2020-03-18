@@ -12,5 +12,5 @@ npm-debug.log*
 
 # umi
 .umi
-/.vscode
+.vscode
 /dist

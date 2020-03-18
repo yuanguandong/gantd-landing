@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Button, Icon, notification, Row, Col, Tag } from 'antd'
+import { Button, Icon, notification, Row, Col } from 'antd'
 import classnames from 'classnames'
 import Prism from 'prismjs'
 Prism.highlightAll()
@@ -31,7 +31,6 @@ import Code from './Code'
 import SchemaFormDemo from './SchemaFormDemo'
 import DataCellDemo from './DataCellDemo'
 import SmartTableDemo from './SmartTableDemo'
-
 
 
 
@@ -81,7 +80,7 @@ const Page = (props: any) => {
           </div>
           <Button size="large" type="primary" className="gant-margin-v-20" href="http://docs.gant.design" target="_blank">开始使用</Button>
           <Button size="large" className={classnames('gant-margin-v-20', 'gant-margin-h-20')} href="https://github.com/gantFDT/gant-design" target="_blank"><Icon type="github" /> github</Button>
-          <div style={{color:'rgba(128,128,128,0.6)'}}>base on antd@3.x</div>
+          <div style={{ color: 'rgba(128,128,128,0.6)' }}>base on antd@3.x</div>
         </>}
       />
 

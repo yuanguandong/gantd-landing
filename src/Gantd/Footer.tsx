@@ -76,3 +76,51 @@ export default function Footer(props: any) {
     </>
   );
 }
+
+
+
+
+
+function returnIt<T>(str: T): T {
+  return str
+}
+
+const returnIt1: <X>(str: X) => X = returnIt;
+
+let a = returnIt({ name: 'a', age: 18 })
+
+function returnArray<T>(array: T[]): T[] {
+  return array
+}
+interface Human {
+  name: string;
+  age: number;
+}
+
+let b = returnArray<Human>([{ name: 'a', age: 12 }])
+let c: Array<string> = ['a', '2']
+
+interface add<T> {
+  (a: T, b: T): T;
+}
+
+let numberAdd: add<number> = (a: number, b: number): number => {
+  return a + b
+}
+
+
+interface HasLength{
+  length: number
+}
+
+function returnIt2<T extends HasLength>(arg: T): T{
+  console.log(arg.length) // no error
+  return arg;
+}
+// 类的泛型约束
+function create<T>(c: {new():T}) {
+return new c();
+}
+class Human{}
+
+let  jack = create<Human>(Human)
