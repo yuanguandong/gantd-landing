@@ -1,16 +1,18 @@
-import React, { useState, useRef, useCallback, useEffect } from 'react'
+import React, { useState, useCallback } from 'react'
 import { Button, notification, message } from 'antd'
-// import SmartTable from 'smart-table-g'
-// import { EditStatus, SwitchStatus } from 'data-cell-g'
 import { SmartTable, EditStatus, SwitchStatus } from 'gantd'
-import Code from './Code'
 import Prism from 'prismjs'
 import { format } from './utils'
+import _ from 'lodash'
+import Mock from 'mockjs'
+const {  Random } = Mock
 
-const tableColumns = [
+
+var editTableColumns = [
   {
     fieldName: 'name',
-    title: '姓名'
+    title: '姓名',
+    componentType: 'Input'
   },
   {
     fieldName: 'age',
@@ -56,11 +58,11 @@ const tableColumns = [
   {
     fieldName: 'birth',
     title: '生日',
-    componentType: 'DataPicker'
+    componentType: 'DatePicker'
   }
 ]
-const tableSchema = {
-  supportColumnFields: tableColumns,
+var editTableSchema = {
+  supportColumnFields: editTableColumns,
   systemViews: [
     {
       viewId: 'systemView',
@@ -107,81 +109,22 @@ const tableSchema = {
           }
         ]
       }
-    }, {
-      viewId: 'systemView1',
-      name: "简洁视图",
-      version: '2020-02-20 02:20:02',
-      panelConfig: {
-        wrap: true,
-        isZebra: false,
-        bordered: false,
-        footerDirection: 'row-reverse',
-        columnFields: [
-          {
-            fieldName: 'name',
-            width: 80
-          },
-          {
-            fieldName: 'age',
-            width: 70
-          },
-          {
-            fieldName: 'cellPhone',
-            width: 230
-          },
-          {
-            fieldName: 'domain',
-            width: 200
-          },
-          {
-            fieldName: 'email',
-            width: 170
-          }
-        ]
-      }
     }
   ]
 }
-export default function EditInlineUse() {
-
-
-  const data = [
-    {
-      name: '王医生',
-      age: 55,
-      cellPhone: { phone: "18010032938" },
-      domain: 'https://www.baidu.com/',
-      email: 'doc_wang@qq.com',
-      bio: { locale: 'zh-CN', value: '华西口腔主任医师。' },
-      price: { money: 29.9 },
-      address: ["CHN", "510000", "510100"],
-      birth: '1965-04-24',
-    },
-    {
-      name: '张医生',
-      age: 42,
-      cellPhone: { phone: "13583384957" },
-      domain: 'https://www.google.com/',
-      email: 'doc_zhang@163.com',
-      bio: { locale: 'zh-CN', value: '北京协和泌尿科主任医师。' },
-      price: { money: 19.9 },
-      address: ["CHN", "110000", "110101"],
-      birth: '1977-01-04',
-    },
-    {
-      name: '李医生',
-      age: 35,
-      cellPhone: { phone: "13777574848" },
-      domain: 'https://www.souhu.com/',
-      email: 'doc_li@souhu.com',
-      bio: { locale: 'zh-CN', value: '上海第一人民医院妇产科主治医师。' },
-      price: { money: 9.9 },
-      address: ["CHN", "310000", "310104"],
-      birth: '1986-02-14',
-    }
-  ]
-
-  const [stateData, setStateData] = useState(data)
+var editTableData = Array(15).fill().map(() => ({
+  name: Random.cname(),
+  age: Random.natural(20, 70),
+  domain: Random.url(),
+  email: Random.email(),
+  birth: Random.datetime('yyyy-MM-dd'),
+  cellPhone: { value: Random.string('number', 11) },
+  bio: [{ value: Random.cparagraph(1, 3) }],
+  price: { value: Random.float(9, 50, 2, 2) },
+  address: ["CHN", "510000", "510100"],
+}))
+const Page = () => {
+  const [stateData, setStateData] = useState(editTableData)
   const [editing, setEditing] = useState(EditStatus.CANCEL);
   const getDifference = useCallback(
     (current, old) => {
@@ -206,11 +149,11 @@ export default function EditInlineUse() {
       const diff = getDifference(newStateData, stateData)
       setStateData(newStateData)
       notification.open({
-        message: '差异数据',
+        message: '差异数据行',
         description: <pre className="language-json">
           <code>
             <div dangerouslySetInnerHTML={{
-              __html: Prism.highlight(format(JSON.stringify({ diff: diff })), Prism.languages.json, 'json')
+              __html: Prism.highlight(format(JSON.stringify(diff)), Prism.languages.json, 'json')
             }} ></div>
           </code >
         </pre >,
@@ -223,38 +166,41 @@ export default function EditInlineUse() {
   const handleSave = useCallback(() => {
     setEditing(EditStatus.SAVE)
   }, [])
+
   return (
     <div style={{ margin: 10 }}>
       <SmartTable
-        title={'聪明的表格'}
         tableKey="EditInlineUse"
         rowKey="id"
-        schema={tableSchema}
+        title="行内编辑"
+        schema={editTableSchema}
         dataSource={stateData}
         editable={editing}
         bodyHeight={300}
         bodyWidth={1630}
         onSave={onSave}
-        headerRight={<>
-          <Button
-            icon={editing === EditStatus.EDIT ? "roolback" : "edit"}
-            className="marginh5"
-            size="small"
-            onClick={() => { if (editing === EditStatus.CANCEL) { message.info('请单击单元格进行编辑') }; setEditing(SwitchStatus) }}
-          >
-            {editing === EditStatus.EDIT ? "结束" : "进入"}编辑
-          </Button>
-          {editing === EditStatus.EDIT && <Button
-            icon="save"
-            className="marginh5"
-            size="small"
-            type="primary"
-            onClick={handleSave}
-          >
-            保存
-          </Button>}
-        </>}
+        headerRight={
+          <>
+            <Button
+              icon={editing === EditStatus.EDIT ? "roolback" : "edit"}
+              size="small"
+              onClick={() => { if (editing === EditStatus.CANCEL) { message.info('请单击单元格进行编辑') }; setEditing(SwitchStatus) }}
+            >
+              {editing === EditStatus.EDIT ? "结束" : "进入"}编辑
+            </Button>
+            {editing === EditStatus.EDIT && <Button
+              icon="save"
+              size="small"
+              type="primary"
+              onClick={handleSave}
+            >
+              保存
+            </Button>}
+          </>
+        }
       />
     </div>
   )
 }
+
+export default Page

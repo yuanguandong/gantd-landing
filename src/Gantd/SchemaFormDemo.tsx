@@ -1,7 +1,6 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react'
 import { Button, notification } from 'antd'
 import { EditStatus, SwitchStatus, SchemaForm } from 'gantd'
-import Code from './Code'
 import Prism from 'prismjs'
 import {format} from './utils'
 
@@ -33,13 +32,12 @@ const schema = {
 }
 
 const uiSchema = {
-    "ui:col": 12,
-    "ui:gutter": 10,
-    "ui:labelCol": 4,
-    "ui:wrapperCol": 20,
-    "ui:labelAlign": "left",
-    "ui:padding": 10,
-    "ui:backgroundColor": "transparent",
+    "field:col": 12,
+    "form:gutter": 10,
+    "field:labelCol": 4,
+    "field:wrapperCol": 20,
+    "field:labelAlign": "left",
+    "form:style": {padding:10,background:'transparent'},
 }
 
 export default function BasicUse() {

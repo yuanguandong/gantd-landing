@@ -51,7 +51,7 @@ const Page = (props: any) => {
       description:
         <>😄 欢迎使用, 欢迎提PR和issue,感谢star,多多关照 🙏</>,
       placement: "bottomRight",
-      duration: 0,
+      duration: 20,
     });
   }, []);
 
