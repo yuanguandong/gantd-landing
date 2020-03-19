@@ -15,7 +15,7 @@
     "babel-plugin-prismjs": "^2.0.1",
     "bisheng": "^1.4.6",
     "enquire-js": "^0.2.1",
-    "gantd": "^1.0.73",
+    "gantd": "^1.1.2",
     "json-formatter-js": "^2.3.4",
     "lodash": "^4.17.15",
     "prismjs": "^1.19.0",

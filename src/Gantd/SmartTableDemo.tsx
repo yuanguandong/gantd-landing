@@ -2,10 +2,10 @@ import React, { useState, useRef, useCallback, useEffect } from 'react'
 import { Button, notification, message } from 'antd'
 // import SmartTable from 'smart-table-g'
 // import { EditStatus, SwitchStatus } from 'data-cell-g'
-import {SmartTable,EditStatus,SwitchStatus} from 'gantd'
+import { SmartTable, EditStatus, SwitchStatus } from 'gantd'
 import Code from './Code'
 import Prism from 'prismjs'
-import {format} from './utils'
+import { format } from './utils'
 
 const tableColumns = [
   {
@@ -107,15 +107,15 @@ const tableSchema = {
           }
         ]
       }
-    },{
+    }, {
       viewId: 'systemView1',
       name: "简洁视图",
       version: '2020-02-20 02:20:02',
       panelConfig: {
         wrap: true,
-        isZebra:false,
-        bordered:false,
-        footerDirection:'row-reverse',
+        isZebra: false,
+        bordered: false,
+        footerDirection: 'row-reverse',
         columnFields: [
           {
             fieldName: 'name',
@@ -143,7 +143,7 @@ const tableSchema = {
   ]
 }
 export default function EditInlineUse() {
-  
+
 
   const data = [
     {
