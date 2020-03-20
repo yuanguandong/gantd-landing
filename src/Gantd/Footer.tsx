@@ -56,6 +56,9 @@ export default function Footer(props: any) {
                 <div className="link">
                   <a href="https://ant.design" target="_blank">AntD</a>
                 </div>
+                <div className="link">
+                  <a href="http://favori.gitee.io/lite-ui-framework/" target="_blank">Lite UI Framework</a>
+                </div>
               </Col>
             </QueueAnim>
             {/* </ScrollOverPack> */}
