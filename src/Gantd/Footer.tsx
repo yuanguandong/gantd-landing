@@ -57,7 +57,7 @@ export default function Footer(props: any) {
                   <a href="https://ant.design" target="_blank">AntD</a>
                 </div>
                 <div className="link">
-                  <a href="http://favori.gitee.io/lite-ui-framework/" target="_blank">Lite UI Framework</a>
+                  <a href="http://favori.gitee.io/lite-ui-framework-landing/" target="_blank">Lite UI Framework</a>
                 </div>
               </Col>
             </QueueAnim>
