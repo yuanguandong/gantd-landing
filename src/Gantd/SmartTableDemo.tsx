@@ -5,7 +5,7 @@ import Prism from 'prismjs'
 import { format } from './utils'
 import _ from 'lodash'
 import Mock from 'mockjs'
-const {  Random } = Mock
+const { Random } = Mock
 
 
 var editTableColumns = [
@@ -66,7 +66,7 @@ var editTableSchema = {
   systemViews: [
     {
       viewId: 'systemView',
-      name: "系统视图",
+      name: "全字段视图",
       version: '2020-02-20 02:20:02',
       panelConfig: {
         wrap: false,
@@ -109,6 +109,29 @@ var editTableSchema = {
           }
         ]
       }
+    }, {
+      viewId: 'simple',
+      name: "简洁自适应高度视图",
+      version: '2020-02-20 02:20:02',
+      panelConfig: {
+        wrap: false,
+        isZebra: false,
+        bordered: false,
+        clickable: true,
+        footerDirection: 'row-reverse',
+        heightMode: 'auto',
+        columnFields: [
+          {
+            fieldName: 'name',
+          },
+          {
+            fieldName: 'domain',
+          },
+          {
+            fieldName: 'email',
+          }
+        ]
+      }
     }
   ]
 }
@@ -119,7 +142,7 @@ var editTableData = Array(15).fill().map(() => ({
   email: Random.email(),
   birth: Random.datetime('yyyy-MM-dd'),
   cellPhone: { value: Random.string('number', 11) },
-  bio: [{ value: Random.cparagraph(1, 3) }],
+  bio: [{ value: Random.cparagraph(1, 3),locale:'zh-CN' }],
   price: { value: Random.float(9, 50, 2, 2) },
   address: ["CHN", "510000", "510100"],
 }))
@@ -177,7 +200,6 @@ const Page = () => {
         dataSource={stateData}
         editable={editing}
         bodyHeight={300}
-        bodyWidth={1630}
         onSave={onSave}
         headerRight={
           <>
