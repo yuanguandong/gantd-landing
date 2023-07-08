@@ -50,7 +50,7 @@
     "pre-commit": "1.x",
     "prettier": "1.19.1",
     "pretty-quick": "^2.0.1",
-    "stylelint": "^9.4.0",
+    "stylelint": "^15.10.1",
     "stylelint-config-prettier": "^4.0.0",
     "stylelint-config-standard": "^18.0.0",
     "umi-plugin-react": "^1.2.0"
